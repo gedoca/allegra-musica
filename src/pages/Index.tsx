@@ -4,7 +4,7 @@ import heroCollage from "@/assets/hero-collage.jpg";
 
 const videoIds = ["ffIm50MJTtg", "X4w4qAeF09Q", "Tp5QOr2cTDQ", "rLmifbry6qM"];
 const videoTitles = [
-  "Campaña "Todas las partes"",
+  'Campaña "Todas las partes"',
   "Pozo - Lisandro Aristimuño (cover)",
   "Al lado del camino - Fito Páez (cover)",
   "Alfonsina y el mar (cover)",
