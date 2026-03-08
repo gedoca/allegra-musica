@@ -1,7 +1,7 @@
 import { BookOpen, Users, Video } from "lucide-react";
 import programaBg from "@/assets/programa-bg.jpg";
 
-const ProgramaPage = () => {
+const SoltarElAirePage = () => {
   return (
     <div>
       <section className="relative py-32 px-6 overflow-hidden">
@@ -51,4 +51,4 @@ const ProgramaPage = () => {
   );
 };
 
-export default ProgramaPage;
+export default SoltarElAirePage;

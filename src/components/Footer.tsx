@@ -19,10 +19,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-sm font-semibold text-foreground mb-4">Navegación</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/autora" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Autora</Link>
-              <Link to="/programa" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Soltar el Aire</Link>
+              <Link to="/musica" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Música</Link>
+              <Link to="/terapeuta" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Terapeuta</Link>
+              <Link to="/terapeuta/soltar-el-aire" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body pl-3">— Soltar el Aire</Link>
+              <Link to="/terapeuta/circle-singing" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body pl-3">— Circle Singing</Link>
               <Link to="/sesiones" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Sesiones</Link>
-              <Link to="/recursos" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Recursos</Link>
               <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Contacto</Link>
             </div>
           </div>
@@ -32,7 +33,7 @@ const Footer = () => {
             <div className="flex gap-4">
               <a href="https://www.youtube.com/channel/UCTD2M0c2AaOuLHywo1UV4UQ" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">YouTube</a>
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a>
-              <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Spotify</a>
+              <a href="https://open.spotify.com/album/0f2h1hZ2lhqqBrm5H8NgDV" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Spotify</a>
             </div>
           </div>
         </div>
