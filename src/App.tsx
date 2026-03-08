@@ -9,6 +9,7 @@ import MusicaPage from "./pages/MusicaPage";
 import TerapeutaPage from "./pages/TerapeutaPage";
 import SoltarElAirePage from "./pages/SoltarElAirePage";
 import CircleSingingPage from "./pages/CircleSingingPage";
+import TravesiaVincularPage from "./pages/TravesiaVincularPage";
 import SesionesPage from "./pages/SesionesPage";
 import ContactoPage from "./pages/ContactoPage";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/terapeuta" element={<TerapeutaPage />} />
             <Route path="/terapeuta/soltar-el-aire" element={<SoltarElAirePage />} />
             <Route path="/terapeuta/circle-singing" element={<CircleSingingPage />} />
+            <Route path="/terapeuta/travesia-vincular" element={<TravesiaVincularPage />} />
             <Route path="/sesiones" element={<SesionesPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
           </Route>

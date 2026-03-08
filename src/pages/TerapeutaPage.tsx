@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wind, Users } from "lucide-react";
+import { ArrowRight, Wind, Users, Heart } from "lucide-react";
 import sesionesBg from "@/assets/sesiones-bg.jpg";
 
 const approaches = [
@@ -16,6 +16,13 @@ const approaches = [
     subtitle: "Canto circular comunitario",
     desc: "Improvisación vocal colectiva: un ritual sonoro donde las voces se encuentran sin partitura, creando comunidad desde el sonido.",
     link: "/terapeuta/circle-singing",
+  },
+  {
+    icon: <Heart className="w-8 h-8" />,
+    title: "Travesía Vincular",
+    subtitle: "Autoconocimiento a través del vínculo",
+    desc: "Un dispositivo vivencial y terapéutico co-dirigido por Germán Doin y Cintia Alegre, donde el vínculo es nuestro verdadero maestro y espejo.",
+    link: "/terapeuta/travesia-vincular",
   },
 ];
 
