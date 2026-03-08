@@ -9,6 +9,7 @@ import MusicaPage from "./pages/MusicaPage";
 import TerapeutaPage from "./pages/TerapeutaPage";
 import SoltarElAirePage from "./pages/SoltarElAirePage";
 import CircleSingingPage from "./pages/CircleSingingPage";
+import TravesiaVincularPage from "./pages/TravesiaVincularPage";
 import SesionesPage from "./pages/SesionesPage";
 import ContactoPage from "./pages/ContactoPage";
 import NotFound from "./pages/NotFound";
