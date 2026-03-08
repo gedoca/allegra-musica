@@ -5,10 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
-import AutoraPage from "./pages/AutoraPage";
-import ProgramaPage from "./pages/ProgramaPage";
+import MusicaPage from "./pages/MusicaPage";
+import TerapeutaPage from "./pages/TerapeutaPage";
+import SoltarElAirePage from "./pages/SoltarElAirePage";
+import CircleSingingPage from "./pages/CircleSingingPage";
 import SesionesPage from "./pages/SesionesPage";
-import RecursosPage from "./pages/RecursosPage";
 import ContactoPage from "./pages/ContactoPage";
 import NotFound from "./pages/NotFound";
 
@@ -23,11 +24,11 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/autora" element={<AutoraPage />} />
-            <Route path="/programa" element={<ProgramaPage />} />
+            <Route path="/musica" element={<MusicaPage />} />
+            <Route path="/terapeuta" element={<TerapeutaPage />} />
+            <Route path="/terapeuta/soltar-el-aire" element={<SoltarElAirePage />} />
+            <Route path="/terapeuta/circle-singing" element={<CircleSingingPage />} />
             <Route path="/sesiones" element={<SesionesPage />} />
-            <Route path="/recursos" element={<RecursosPage />} />
-            <Route path="/recursos/:categoria" element={<RecursosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />

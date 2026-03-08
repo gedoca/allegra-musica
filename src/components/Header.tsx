@@ -4,16 +4,20 @@ import { Menu, X, Music } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Inicio" },
-  { to: "/autora", label: "Autora" },
-  { to: "/programa", label: "Soltar el Aire" },
+  { to: "/musica", label: "Música" },
+  { to: "/terapeuta", label: "Terapeuta" },
   { to: "/sesiones", label: "Sesiones" },
-  { to: "/recursos", label: "Recursos" },
   { to: "/contacto", label: "Contacto" },
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -25,14 +29,13 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
-                location.pathname === link.to
+                isActive(link.to)
                   ? "text-primary bg-primary/10"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
@@ -42,9 +45,8 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Social icons desktop */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href="https://open.spotify.com/album/0f2h1hZ2lhqqBrm5H8NgDV" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
             <Music className="w-4 h-4" />
           </a>
           <a href="https://www.youtube.com/channel/UCTD2M0c2AaOuLHywo1UV4UQ" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
@@ -55,7 +57,6 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground p-2"
           onClick={() => setIsOpen(!isOpen)}
@@ -64,7 +65,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <nav className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border animate-fade-in">
           <div className="px-6 py-4 flex flex-col gap-1">
@@ -74,7 +74,7 @@ const Header = () => {
                 to={link.to}
                 onClick={() => setIsOpen(false)}
                 className={`px-4 py-3 rounded-lg text-sm font-medium font-body transition-colors ${
-                  location.pathname === link.to
+                  isActive(link.to)
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
