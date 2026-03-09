@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import bio01 from "@/assets/bio-01.jpg";
 import bio02 from "@/assets/bio-02.jpg";
 import fracturaCover from "@/assets/fractura-cover.jpg";
+import musicaHero from "@/assets/sesiones-bg.jpg";
 
 const MusicaPage = () => {
   return (
