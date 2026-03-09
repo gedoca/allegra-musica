@@ -10,10 +10,10 @@ const CAMPAIGN_PROGRESS = 25; // Percentage (0-100)
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejVQc7snxR16e14sT1i6SLHSnPYt8sxEQT8Pdr7UCH-dNUyA/viewform";
 
 const milestones = [
-  { id: 1, title: "Producción y lanzamiento de Fractura", completed: true },
-  { id: 2, title: "Producción de Movimiento", completed: false },
-  { id: 3, title: "Producción de Apertura", completed: false },
-  { id: 4, title: "Producción de Integración", completed: false },
+  { id: 1, title: "Producción y lanzamiento del 1er EP: Fractura", completed: true },
+  { id: 2, title: "Producción de 2do EP: Movimiento", completed: false },
+  { id: 3, title: "Producción del 3er EP: Apertura", completed: false },
+  { id: 4, title: "Producción de 4to EP: Integración", completed: false },
 ];
 
 const contributionLevels = [
