@@ -108,20 +108,12 @@ const TravesiaVincularPage = () => {
               <BookOpen className="w-4 h-4" /> Substack
             </a>
             <a
-              href="https://chat.whatsapp.com/travesiavincular"
+              href="https://chat.whatsapp.com/LM90nNwxFb0JY1sBtInjN8?mode=gi_t"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-background text-foreground font-body font-semibold text-sm hover:bg-muted transition-colors"
             >
               <MessageCircle className="w-4 h-4" /> Grupo de WhatsApp
-            </a>
-            <a
-              href="https://forms.gle/travesiavincular"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-background text-foreground font-body font-semibold text-sm hover:bg-muted transition-colors"
-            >
-              <FileText className="w-4 h-4" /> Inscripciones
             </a>
           </div>
         </div>
