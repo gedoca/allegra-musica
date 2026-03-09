@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { Music, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
+import allegraLogo from "@/assets/allegra-logo.png";
+
+const WHATSAPP_URL = "https://wa.me/5491153130624";
 
 const Footer = () => {
   return (
@@ -8,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Music className="w-5 h-5 text-primary" />
+              <img src={allegraLogo} alt="Allegra" className="w-6 h-6 rounded-full object-cover" />
               <span className="font-display text-lg font-bold text-foreground">ALLEGRA</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed font-body">
@@ -24,7 +27,8 @@ const Footer = () => {
               <Link to="/terapeuta/soltar-el-aire" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body pl-3">— Soltar el Aire</Link>
               <Link to="/terapeuta/circle-singing" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body pl-3">— Circle Singing</Link>
               <Link to="/sesiones" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Sesiones</Link>
-              <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Contacto</Link>
+              <Link to="/campaña" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Campaña</Link>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">Contacto (WhatsApp)</a>
             </div>
           </div>
 

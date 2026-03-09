@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Music, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import allegraLogo from "@/assets/allegra-logo.png";
+
+const WHATSAPP_URL = "https://wa.me/5491153130624";
 
 const navLinks = [
   { to: "/", label: "Inicio" },
@@ -15,7 +18,6 @@ const navLinks = [
     ]
   },
   { to: "/sesiones", label: "Sesiones" },
-  { to: "/contacto", label: "Contacto" },
 ];
 
 const Header = () => {
@@ -32,7 +34,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 group">
-          <Music className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
+          <img src={allegraLogo} alt="Allegra" className="w-8 h-8 rounded-full object-cover" />
           <span className="font-display text-xl font-bold tracking-wide text-foreground">
             ALLEGRA
           </span>
@@ -85,18 +87,28 @@ const Header = () => {
             </div>
           ))}
           
-          {/* Campaña Button - Highlighted */}
+          {/* Campaña Button */}
           <Link
             to="/campaña"
             className="ml-2 px-5 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm"
           >
             Campaña
           </Link>
+
+          {/* WhatsApp Contact */}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 px-4 py-2 rounded-lg text-sm font-medium font-body text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+          >
+            Contacto
+          </a>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <a href="https://open.spotify.com/album/0f2h1hZ2lhqqBrm5H8NgDV" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <Music className="w-4 h-4" />
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           </a>
           <a href="https://www.youtube.com/channel/UCTD2M0c2AaOuLHywo1UV4UQ" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -175,6 +187,17 @@ const Header = () => {
             >
               Campaña
             </Link>
+
+            {/* WhatsApp Contact - Mobile */}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-3 rounded-lg text-sm font-medium font-body text-muted-foreground hover:text-foreground hover:bg-muted transition-colors text-center"
+            >
+              Contacto (WhatsApp)
+            </a>
           </div>
         </nav>
       )}
