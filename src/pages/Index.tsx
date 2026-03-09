@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Music2, Mic2, Play } from "lucide-react";
-import homeHero from "@/assets/home-hero-01.jpg";
+import homeHero from "@/assets/hero-collage.jpg";
 import fracturaCover from "@/assets/fractura-cover.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5491153130624";
