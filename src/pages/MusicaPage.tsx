@@ -103,6 +103,42 @@ const MusicaPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Timeline */}
+      <section className="allegra-section">
+        <div className="allegra-container max-w-3xl">
+          <h2 className="font-display text-3xl font-bold text-foreground mb-12 text-center">Línea del Tiempo</h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-border" />
+            
+            <div className="space-y-12">
+              {[
+                { year: "1988", text: "Nací en Buenos Aires, Argentina." },
+                { year: "1995", text: "Primeros pasos en coros infantiles y música en la iglesia." },
+                { year: "2005", text: "Explorando el blues y el jazz en bares porteños." },
+                { year: "2010", text: "Formación vocal y estudios en psicología social." },
+                { year: "2015", text: "Comienzo a componer mis propias canciones." },
+                { year: "2018", text: "El quiebre: empiezo a contar mi historia a través de la música." },
+                { year: "2022", text: "Fundación de Allegra: voz, terapia y arte como camino de transformación." },
+                { year: "2024", text: "Lanzamiento del EP 'Fractura' — El primer paso del disco 'Todas las partes'." },
+                { year: "2026", text: "Campaña de financiamiento colectivo para completar el disco completo." },
+              ].map((item, i) => (
+                <div key={i} className="relative pl-20 group">
+                  {/* Year marker */}
+                  <div className="absolute left-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary group-hover:bg-primary/20 transition-colors">
+                    <span className="font-display font-bold text-sm text-primary">{item.year}</span>
+                  </div>
+                  {/* Content */}
+                  <div className="allegra-card p-6">
+                    <p className="text-muted-foreground font-body leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
