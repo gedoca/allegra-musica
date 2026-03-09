@@ -12,6 +12,7 @@ import CircleSingingPage from "./pages/CircleSingingPage";
 import TravesiaVincularPage from "./pages/TravesiaVincularPage";
 import SesionesPage from "./pages/SesionesPage";
 import ContactoPage from "./pages/ContactoPage";
+import CampañaPage from "./pages/CampañaPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
