@@ -92,7 +92,6 @@ const MusicaPage = () => {
         <div className="allegra-container grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <img src={bio01} alt="Cin Alegre — retrato" className="rounded-xl w-full object-cover aspect-[3/4]" loading="lazy" />
-            <img src={bio02} alt="Cin Alegre — sesión" className="rounded-xl w-full object-cover aspect-[3/4]" loading="lazy" />
           </div>
           <div className="space-y-6 text-muted-foreground font-body leading-relaxed">
             <h2 className="font-display text-2xl font-bold text-foreground">Soy Cin Alegre.</h2>
