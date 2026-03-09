@@ -12,6 +12,7 @@ import CircleSingingPage from "./pages/CircleSingingPage";
 import TravesiaVincularPage from "./pages/TravesiaVincularPage";
 import SesionesPage from "./pages/SesionesPage";
 import ContactoPage from "./pages/ContactoPage";
+import CampañaPage from "./pages/CampañaPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/terapeuta/travesia-vincular" element={<TravesiaVincularPage />} />
             <Route path="/sesiones" element={<SesionesPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
+            <Route path="/campaña" element={<CampañaPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,17 +1,26 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Music } from "lucide-react";
+import { Menu, X, Music, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Inicio" },
   { to: "/musica", label: "Música" },
-  { to: "/terapeuta", label: "Terapeuta" },
+  { 
+    to: "/terapeuta", 
+    label: "Terapeuta",
+    submenu: [
+      { to: "/terapeuta/soltar-el-aire", label: "Soltar el Aire" },
+      { to: "/terapeuta/circle-singing", label: "Circle Singing" },
+      { to: "/terapeuta/travesia-vincular", label: "Travesía Vincular" },
+    ]
+  },
   { to: "/sesiones", label: "Sesiones" },
   { to: "/contacto", label: "Contacto" },
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
   const isActive = (path: string) => {
@@ -31,18 +40,58 @@ const Header = () => {
 
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
-                isActive(link.to)
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {link.label}
-            </Link>
+            <div key={link.to} className="relative group">
+              {link.submenu ? (
+                <>
+                  <Link
+                    to={link.to}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors flex items-center gap-1 ${
+                      isActive(link.to)
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                    <ChevronDown className="w-3 h-3" />
+                  </Link>
+                  <div className="absolute top-full left-0 mt-1 bg-background/95 backdrop-blur-lg border border-border rounded-lg shadow-lg py-2 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                    {link.submenu.map((sublink) => (
+                      <Link
+                        key={sublink.to}
+                        to={sublink.to}
+                        className={`block px-4 py-2 text-sm font-medium font-body transition-colors ${
+                          isActive(sublink.to)
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  to={link.to}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
+                    isActive(link.to)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )}
+            </div>
           ))}
+          
+          {/* Campaña Button - Highlighted */}
+          <Link
+            to="/campaña"
+            className="ml-2 px-5 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm"
+          >
+            Campaña
+          </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
@@ -69,19 +118,63 @@ const Header = () => {
         <nav className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border animate-fade-in">
           <div className="px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium font-body transition-colors ${
-                  isActive(link.to)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.to}>
+                {link.submenu ? (
+                  <>
+                    <button
+                      onClick={() => setOpenSubmenu(openSubmenu === link.to ? null : link.to)}
+                      className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium font-body transition-colors ${
+                        isActive(link.to)
+                          ? "text-primary bg-primary/10"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${openSubmenu === link.to ? "rotate-180" : ""}`} />
+                    </button>
+                    {openSubmenu === link.to && (
+                      <div className="ml-4 mt-1 space-y-1">
+                        {link.submenu.map((sublink) => (
+                          <Link
+                            key={sublink.to}
+                            to={sublink.to}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
+                              isActive(sublink.to)
+                                ? "text-primary bg-primary/10"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                            }`}
+                          >
+                            {sublink.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    to={link.to}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium font-body transition-colors ${
+                      isActive(link.to)
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
             ))}
+            
+            {/* Campaña Button - Mobile */}
+            <Link
+              to="/campaña"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 px-4 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm text-center"
+            >
+              Campaña
+            </Link>
           </div>
         </nav>
       )}
