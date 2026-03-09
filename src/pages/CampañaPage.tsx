@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2, Circle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import fracturaCover from "@/assets/fractura-cover.jpg";
+import programaBg from "@/assets/programa-bg.jpg";
 
 // EDITABLE: Change this value to update the campaign progress
 const CAMPAIGN_PROGRESS = 25; // Percentage (0-100)
@@ -70,8 +71,16 @@ const CampañaPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-32 px-6 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
-        <div className="allegra-container max-w-4xl text-center">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={programaBg} 
+            alt="Cin Alegre en estudio de grabación" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background"></div>
+        </div>
+        <div className="allegra-container max-w-4xl text-center relative z-10">
           <span className="text-xs font-body font-semibold tracking-[0.3em] uppercase text-primary">
             Financiamiento Colectivo
           </span>
