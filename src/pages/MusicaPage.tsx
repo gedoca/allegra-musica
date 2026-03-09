@@ -9,8 +9,16 @@ const MusicaPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-32 px-6 bg-muted/30 overflow-hidden">
-        <div className="allegra-container">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={musicaHero} 
+            alt="Cin Alegre en estudio de grabación" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background"></div>
+        </div>
+        <div className="allegra-container relative z-10">
           <span className="text-xs font-body font-semibold tracking-[0.3em] uppercase text-primary">Artista / Música</span>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-2">Música</h1>
           <p className="text-lg text-muted-foreground font-body max-w-2xl mt-4">
