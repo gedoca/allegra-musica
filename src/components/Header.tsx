@@ -36,9 +36,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2 group">
           <img src={allegraLogo} alt="Allegra" className="w-8 h-8 rounded-full object-cover" />
-          <span className="font-display text-xl font-bold tracking-wide text-foreground">
-            ALLEGRA
-          </span>
+          <img src={allegraTextLogo} alt="Allegra" className="h-6 invert object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
