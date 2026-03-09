@@ -126,7 +126,8 @@ const MusicaPage = () => {
                 { year: "2015", text: "Comienzo a componer mis propias canciones." },
                 { year: "2018", text: "El quiebre: empiezo a contar mi historia a través de la música." },
                 { year: "2022", text: "Fundación de Allegra: voz, terapia y arte como camino de transformación." },
-                { year: "2024", text: "Lanzamiento del EP 'Fractura' — El primer paso del disco 'Todas las partes'." },
+                { year: "2025", text: "Inicia la producción de 'Todas las Partes'." },
+                { year: "2026", text: "Lanzamiento del EP 'Fractura' — El primer paso del disco 'Todas las partes'." },
                 { year: "2026", text: "Campaña de financiamiento colectivo para completar el disco completo." },
               ].map((item, i) => (
                 <div key={i} className="relative pl-20 group">
