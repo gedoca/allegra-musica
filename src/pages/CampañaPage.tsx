@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2, Circle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import fracturaCover from "@/assets/fractura-cover.jpg";
+import programaBg from "@/assets/programa-bg.jpg";
 
 // EDITABLE: Change this value to update the campaign progress
 const CAMPAIGN_PROGRESS = 25; // Percentage (0-100)
