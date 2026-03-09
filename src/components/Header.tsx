@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import allegraLogo from "@/assets/allegra-logo.png";
+import allegraTextLogo from "@/assets/allegra-text-logo.png";
 
 const WHATSAPP_URL = "https://wa.me/5491153130624";
 
