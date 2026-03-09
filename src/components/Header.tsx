@@ -40,18 +40,58 @@ const Header = () => {
 
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
-                isActive(link.to)
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {link.label}
-            </Link>
+            <div key={link.to} className="relative group">
+              {link.submenu ? (
+                <>
+                  <Link
+                    to={link.to}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors flex items-center gap-1 ${
+                      isActive(link.to)
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {link.label}
+                    <ChevronDown className="w-3 h-3" />
+                  </Link>
+                  <div className="absolute top-full left-0 mt-1 bg-background/95 backdrop-blur-lg border border-border rounded-lg shadow-lg py-2 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                    {link.submenu.map((sublink) => (
+                      <Link
+                        key={sublink.to}
+                        to={sublink.to}
+                        className={`block px-4 py-2 text-sm font-medium font-body transition-colors ${
+                          isActive(sublink.to)
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        }`}
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  to={link.to}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium font-body transition-colors ${
+                    isActive(link.to)
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )}
+            </div>
           ))}
+          
+          {/* Campaña Button - Highlighted */}
+          <Link
+            to="/campaña"
+            className="ml-2 px-5 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm"
+          >
+            Campaña
+          </Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
