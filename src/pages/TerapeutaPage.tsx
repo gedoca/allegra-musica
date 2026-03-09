@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Wind, Users, Heart } from "lucide-react";
+import { ArrowRight, Wind, Users, Heart, Laptop } from "lucide-react";
 import sesionesBg from "@/assets/sesiones-bg.jpg";
 
 const approaches = [
   {
-    icon: <User className="w-8 h-8" />,
+    icon: <Laptop className="w-8 h-8" />,
     title: "Sesión Individual",
     subtitle: "Programa de 8 semanas",
     desc: "Un espacio íntimo para explorar tu historia personal desde la voz, el cuerpo y tu conexión con el sonido.",
