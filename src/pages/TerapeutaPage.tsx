@@ -4,6 +4,13 @@ import sesionesBg from "@/assets/sesiones-bg.jpg";
 
 const approaches = [
   {
+    icon: <User className="w-8 h-8" />,
+    title: "Sesión Individual",
+    subtitle: "Programa de 8 semanas",
+    desc: "Un espacio íntimo para explorar tu historia personal desde la voz, el cuerpo y tu conexión con el sonido.",
+    link: "/sesiones",
+  },
+  {
     icon: <Wind className="w-8 h-8" />,
     title: "Soltar el Aire",
     subtitle: "Programa de 8 semanas",
@@ -82,26 +89,6 @@ const TerapeutaPage = () => {
         </div>
       </section>
 
-      {/* Sesiones */}
-      <section className="allegra-section">
-        <div className="allegra-container max-w-3xl">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-6">Sesiones Disponibles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { title: "Sesión Individual", desc: "Un espacio íntimo para explorar tu voz, tu respiración y tu conexión con el sonido." },
-              { title: "Sesión Grupal", desc: "La potencia del vínculo: exploración vocal colectiva para descubrir la propia voz a través de las demás." },
-            ].map((s, i) => (
-              <div key={i} className="allegra-card p-6">
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground font-body mb-4">{s.desc}</p>
-                <Link to="/contacto" className="inline-flex items-center gap-2 text-primary text-sm font-semibold font-body hover:underline">
-                  Reservar <ArrowRight className="w-3 h-3" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
