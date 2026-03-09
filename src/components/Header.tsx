@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Music } from "lucide-react";
+import { Menu, X, Music, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Inicio" },
   { to: "/musica", label: "Música" },
-  { to: "/terapeuta", label: "Terapeuta" },
+  { 
+    to: "/terapeuta", 
+    label: "Terapeuta",
+    submenu: [
+      { to: "/terapeuta/soltar-el-aire", label: "Soltar el Aire" },
+      { to: "/terapeuta/circle-singing", label: "Circle Singing" },
+      { to: "/terapeuta/travesia-vincular", label: "Travesía Vincular" },
+    ]
+  },
   { to: "/sesiones", label: "Sesiones" },
   { to: "/contacto", label: "Contacto" },
 ];
