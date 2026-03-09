@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import sesionesBg from "@/assets/sesiones-bg.jpg";
+import bio04 from "@/assets/bio-04.jpg";
+import home08 from "@/assets/home-08.jpg";
+
+const WHATSAPP_URL = "https://wa.me/5491153130624";
 
 const SesionesPage = () => {
   return (
@@ -48,26 +51,31 @@ const SesionesPage = () => {
         </div>
       </section>
 
-      {/* Soltar la Voz - Highlighted */}
+      {/* Soltar la Voz with image */}
       <section className="allegra-section bg-muted/30">
-        <div className="allegra-container max-w-4xl">
-          <div className="allegra-card p-8 md:p-12 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-            <span className="text-xs font-body font-semibold tracking-widest uppercase text-primary">Propuesta Central</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Soltar la Voz</h2>
-            <p className="text-lg text-muted-foreground font-body leading-relaxed mb-6">
-              Exploraciones individuales y grupales para descubrir, liberar y transformar tu voz. Un espacio donde el sonido se convierte en puente hacia lo que habita en vos.
-            </p>
-            <Link 
-              to="/contacto" 
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold"
-            >
-              Agendar Sesión <ArrowRight className="w-4 h-4" />
-            </Link>
+        <div className="allegra-container max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8 items-center">
+            <div className="allegra-card p-8 md:p-12 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <span className="text-xs font-body font-semibold tracking-widest uppercase text-primary">Propuesta Central</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Soltar la Voz</h2>
+              <p className="text-lg text-muted-foreground font-body leading-relaxed mb-6">
+                Exploraciones individuales y grupales para descubrir, liberar y transformar tu voz. Un espacio donde el sonido se convierte en puente hacia lo que habita en vos.
+              </p>
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold"
+              >
+                Agendar Sesión <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            <img src={bio04} alt="Allegra — exploración vocal" className="rounded-xl w-full object-cover aspect-[3/4] hidden md:block" loading="lazy" />
           </div>
         </div>
       </section>
 
-      {/* Foundations - 3 Columns */}
+      {/* Foundations */}
       <section className="allegra-section">
         <div className="allegra-container">
           <h2 className="font-display text-3xl font-bold text-foreground text-center mb-4">Fundamentos del Trabajo Vocal</h2>
@@ -86,7 +94,6 @@ const SesionesPage = () => {
                 La voz situada, el cuerpo como territorio. Entendemos la voz como construcción social y vincular, atravesada por la historia y el contexto.
               </p>
             </div>
-
             <div className="allegra-card p-6 text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +105,6 @@ const SesionesPage = () => {
                 Fisiología y conciencia respiratoria. Trabajamos desde el cuerpo, respetando la anatomía vocal y desarrollando una técnica saludable.
               </p>
             </div>
-
             <div className="allegra-card p-6 text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,23 +120,28 @@ const SesionesPage = () => {
         </div>
       </section>
 
-      {/* Sesiones Disponibles */}
+      {/* Ambientación image */}
       <section className="allegra-section bg-muted/30">
-        <div className="allegra-container max-w-3xl">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-6">Modalidades de Sesiones</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { title: "Sesión Individual", desc: "Un espacio íntimo para explorar tu voz, tu respiración y tu conexión con el sonido." },
-              { title: "Sesión Grupal", desc: "La potencia del vínculo: exploración vocal colectiva para descubrir la propia voz a través de las demás." },
-            ].map((s, i) => (
-              <div key={i} className="allegra-card p-6">
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground font-body mb-4">{s.desc}</p>
-                <Link to="/contacto" className="inline-flex items-center gap-2 text-primary text-sm font-semibold font-body hover:underline">
-                  Reservar <ArrowRight className="w-3 h-3" />
-                </Link>
+        <div className="allegra-container max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 items-center">
+            <img src={home08} alt="Allegra — sesiones de canto" className="rounded-xl w-full object-cover aspect-video" loading="lazy" />
+            <div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">Modalidades de Sesiones</h2>
+              <div className="space-y-6">
+                {[
+                  { title: "Sesión Individual", desc: "Un espacio íntimo para explorar tu voz, tu respiración y tu conexión con el sonido." },
+                  { title: "Sesión Grupal", desc: "La potencia del vínculo: exploración vocal colectiva para descubrir la propia voz a través de las demás." },
+                ].map((s, i) => (
+                  <div key={i} className="allegra-card p-6">
+                    <h3 className="font-display text-lg font-bold text-foreground mb-2">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground font-body mb-4">{s.desc}</p>
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary text-sm font-semibold font-body hover:underline">
+                      Reservar <ArrowRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

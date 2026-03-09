@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { CheckCircle2, Circle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import fracturaCover from "@/assets/fractura-cover.jpg";
 
 // EDITABLE: Change this value to update the campaign progress
 const CAMPAIGN_PROGRESS = 25; // Percentage (0-100)
+
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejVQc7snxR16e14sT1i6SLHSnPYt8sxEQT8Pdr7UCH-dNUyA/viewform";
 
 const milestones = [
   { id: 1, title: "Producción y lanzamiento de Fractura", completed: true },
@@ -14,24 +17,52 @@ const milestones = [
 
 const contributionLevels = [
   {
-    amount: "$500",
-    title: "Semilla",
-    desc: "Tu nombre en los agradecimientos del disco digital + acceso anticipado a las canciones.",
+    amount: "20 USD",
+    ars: "~24.000 ARS",
+    col: "~84.000 COL",
+    title: "Coproductor INICIAL",
+    desc: "Tu nombre en los créditos del disco.",
+    accent: false,
   },
   {
-    amount: "$1,500",
-    title: "Raíz",
-    desc: "Todo lo anterior + disco físico firmado + invitación a un encuentro virtual exclusivo.",
+    amount: "50 USD",
+    ars: "~60.000 ARS",
+    col: "~210.000 COL",
+    title: "Coproductor BRONCE",
+    desc: "Acceso a 1 Clase grupal + Crédito en el disco.",
+    accent: false,
   },
   {
-    amount: "$3,000",
-    title: "Tronco",
-    desc: "Todo lo anterior + sesión individual de exploración vocal (online) + poster firmado.",
+    amount: "100 USD",
+    ars: "~120.000 ARS",
+    col: "~420.000 COL",
+    title: "Coproductor PLATA",
+    desc: "1 sesión de canto individual + Clase grupal + Créditos.",
+    accent: false,
   },
   {
-    amount: "$5,000",
-    title: "Copa",
-    desc: "Todo lo anterior + participación en el videoclip de una canción + entrada doble al show de lanzamiento.",
+    amount: "250 USD",
+    ars: "~300.000 ARS",
+    col: "~1.050.000 COL",
+    title: "Coproductor ORO",
+    desc: "Proceso de 4 sesiones individuales + Clase grupal + Créditos.",
+    accent: true,
+  },
+  {
+    amount: "500 USD",
+    ars: "~600.000 ARS",
+    col: "~2.100.000 COL",
+    title: "Coproductor PLATINO",
+    desc: "Cover grabado por Cintia + Sesión individual + clase grupal + Crédito en el disco.",
+    accent: true,
+  },
+  {
+    amount: "1000 USD",
+    ars: "~1.200.000 ARS",
+    col: "~4.200.000 COL",
+    title: "Coproductor DIAMANTE",
+    desc: "Canción personalizada + Sesión individual + clase grupal + Crédito destacado.",
+    accent: true,
   },
 ];
 
@@ -118,35 +149,60 @@ const CampañaPage = () => {
           <p className="text-center text-muted-foreground font-body mb-12 max-w-2xl mx-auto">
             Elegí cómo querés acompañar este proyecto. Cada nivel incluye recompensas especiales como muestra de gratitud.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {contributionLevels.map((level, i) => (
               <div
                 key={i}
-                className="allegra-card p-6 flex flex-col hover:border-primary/50 transition-colors"
+                className={`allegra-card p-6 flex flex-col transition-colors ${
+                  level.accent
+                    ? "border-primary/40 bg-primary/5 hover:border-primary/60"
+                    : "hover:border-primary/30"
+                }`}
               >
-                <span className="font-display text-3xl font-bold text-primary mb-2">
+                <span className="font-display text-3xl font-bold text-primary mb-1">
                   {level.amount}
                 </span>
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                <div className="text-xs text-muted-foreground font-body mb-3 space-y-0.5">
+                  <p>{level.ars}</p>
+                  <p>{level.col}</p>
+                </div>
+                <h3 className="font-display text-lg font-bold text-foreground mb-3">
                   {level.title}
                 </h3>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed mb-6 flex-1">
                   {level.desc}
                 </p>
-                <Link
-                  to="/contacto"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm"
+                <a
+                  href={FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold text-sm uppercase tracking-wider"
                 >
-                  Aportar
-                </Link>
+                  Colaborar
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About the Project */}
+      {/* Album Cover */}
       <section className="allegra-section">
+        <div className="allegra-container max-w-md mx-auto text-center">
+          <img
+            src={fracturaCover}
+            alt="Portada del disco Fractura — Allegra"
+            className="w-full rounded-xl shadow-lg mb-6"
+            loading="lazy"
+          />
+          <p className="text-muted-foreground font-body text-sm italic">
+            Fractura — El primer paso de "Todas las Partes"
+          </p>
+        </div>
+      </section>
+
+      {/* About the Project */}
+      <section className="allegra-section bg-muted/30">
         <div className="allegra-container max-w-3xl space-y-6 text-muted-foreground font-body leading-relaxed">
           <h2 className="font-display text-3xl font-bold text-foreground mb-6">
             ¿Por qué financiamiento colectivo?
@@ -163,9 +219,16 @@ const CampañaPage = () => {
           <p>
             Con tu ayuda, vamos a poder grabar, producir y lanzar las canciones que completan este viaje: <strong className="text-foreground">Movimiento</strong>, <strong className="text-foreground">Apertura</strong> e <strong className="text-foreground">Integración</strong>.
           </p>
-          <p className="text-primary font-semibold text-center pt-6">
-            Gracias por ser parte de este proceso. 💛
-          </p>
+          <div className="text-center pt-6">
+            <a
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-body font-semibold"
+            >
+              Quiero ser Coproductor/a 💛
+            </a>
+          </div>
         </div>
       </section>
     </div>

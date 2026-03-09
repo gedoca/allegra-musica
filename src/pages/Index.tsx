@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Music2, Mic2, Play } from "lucide-react";
-import heroCollage from "@/assets/hero-collage.jpg";
+import homeHero from "@/assets/home-hero-01.jpg";
+import fracturaCover from "@/assets/fractura-cover.jpg";
+
+const WHATSAPP_URL = "https://wa.me/5491153130624";
 
 const videoIds = ["ffIm50MJTtg", "X4w4qAeF09Q", "Tp5QOr2cTDQ", "rLmifbry6qM"];
 const videoTitles = [
@@ -16,7 +19,7 @@ const HomePage = () => {
       {/* Hero — Fractura EP Launch */}
       <section className="relative h-[95vh] min-h-[650px] flex items-center justify-center overflow-hidden">
         <img
-          src={heroCollage}
+          src={homeHero}
           alt="Allegra — Fractura EP"
           className="absolute inset-0 w-full h-full object-cover scale-105"
         />
@@ -43,7 +46,7 @@ const HomePage = () => {
               Escuchar en Spotify
             </a>
             <a
-              href="https://music.apple.com"
+              href="https://music.apple.com/mx/album/fractura-pt-1-single/1878742532"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-foreground/20 text-foreground px-8 py-3 rounded-full font-body font-semibold hover:bg-foreground/5 transition-colors"
@@ -51,34 +54,55 @@ const HomePage = () => {
               Apple Music
             </a>
             <a
-              href="https://www.youtube.com/channel/UCTD2M0c2AaOuLHywo1UV4UQ"
+              href="https://music.youtube.com/playlist?list=OLAK5uy_kCkQV_GoO1b9deXit6_yKNIrhN1qPMDwE&si=rRGE6l8EAeVDZnEl"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-foreground/20 text-foreground px-8 py-3 rounded-full font-body font-semibold hover:bg-foreground/5 transition-colors"
             >
-              YouTube
+              YouTube Music
             </a>
+          </div>
+
+          {/* CTA Campaña */}
+          <div className="mt-8">
+            <Link
+              to="/campaña"
+              className="inline-flex items-center gap-2 text-primary font-body font-semibold hover:underline transition-colors text-sm"
+            >
+              Apoya el resto del disco: IR A LA CAMPAÑA
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Spotify embed */}
+      {/* Spotify embed with album cover */}
       <section className="allegra-section bg-muted/30">
-        <div className="allegra-container max-w-3xl text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">Escuchá Fractura</h2>
-          <p className="text-muted-foreground font-body mb-8">El EP completo, directo desde Spotify.</p>
-          <div className="w-full rounded-xl overflow-hidden">
-            <iframe
-              style={{ borderRadius: "12px" }}
-              src="https://open.spotify.com/embed/album/0f2h1hZ2lhqqBrm5H8NgDV?utm_source=generator"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        <div className="allegra-container max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-center">
+            <img
+              src={fracturaCover}
+              alt="Portada Fractura EP"
+              className="w-full max-w-[280px] mx-auto rounded-xl shadow-lg"
               loading="lazy"
-              title="Fractura — Allegra en Spotify"
             />
+            <div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">Escuchá Fractura</h2>
+              <p className="text-muted-foreground font-body mb-6">El EP completo, directo desde Spotify.</p>
+              <div className="w-full rounded-xl overflow-hidden">
+                <iframe
+                  style={{ borderRadius: "12px" }}
+                  src="https://open.spotify.com/embed/album/0f2h1hZ2lhqqBrm5H8NgDV?utm_source=generator"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title="Fractura — Allegra en Spotify"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -159,13 +183,15 @@ const HomePage = () => {
           <p className="text-muted-foreground font-body mb-8 max-w-lg mx-auto">
             Escribime para conocer más sobre las sesiones, Soltar el Aire o Circle Singing.
           </p>
-          <Link
-            to="/contacto"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body font-semibold hover:opacity-90 transition-opacity"
           >
             Contacto
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </div>
