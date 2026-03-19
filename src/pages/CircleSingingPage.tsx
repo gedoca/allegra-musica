@@ -7,7 +7,7 @@ const CircleSingingPage = () => {
     <div>
       <section className="relative py-32 px-6 overflow-hidden">
         <img src={circleSingingBg} alt="Circle Singing" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-background/80 opacity-30" />
         <div className="relative allegra-container">
           <span className="text-xs font-body font-semibold tracking-[0.3em] uppercase text-primary">Práctica Colectiva</span>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-2 mb-4">Circle Singing</h1>
@@ -39,19 +39,19 @@ const CircleSingingPage = () => {
           <h2 className="font-display text-2xl font-bold text-foreground text-center mb-10">¿Qué sucede en un Circle Singing?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: <Mic2 className="w-6 h-6" />, title: "Improvisación guiada", desc: "Una facilitadora propone melodías y ritmos que el grupo toma, transforma y hace propios." },
-              { icon: <Users className="w-6 h-6" />, title: "Comunidad sonora", desc: "El círculo genera un espacio de confianza donde cada voz es bienvenida tal como es." },
-              { icon: <Waves className="w-6 h-6" />, title: "Vibración compartida", desc: "La resonancia de las voces en conjunto produce una experiencia física y emocional profunda." },
-              { icon: <Heart className="w-6 h-6" />, title: "Sanación colectiva", desc: "El canto circular permite soltar tensiones, conectar con las emociones y sentirse parte de algo mayor." },
-            ].map((item, i) => (
-              <div key={i} className="allegra-card p-6">
+            { icon: <Mic2 className="w-6 h-6" />, title: "Improvisación guiada", desc: "Una facilitadora propone melodías y ritmos que el grupo toma, transforma y hace propios." },
+            { icon: <Users className="w-6 h-6" />, title: "Comunidad sonora", desc: "El círculo genera un espacio de confianza donde cada voz es bienvenida tal como es." },
+            { icon: <Waves className="w-6 h-6" />, title: "Vibración compartida", desc: "La resonancia de las voces en conjunto produce una experiencia física y emocional profunda." },
+            { icon: <Heart className="w-6 h-6" />, title: "Sanación colectiva", desc: "El canto circular permite soltar tensiones, conectar con las emociones y sentirse parte de algo mayor." }].
+            map((item, i) =>
+            <div key={i} className="allegra-card p-6">
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
                 <h3 className="font-display text-base font-bold text-foreground mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground font-body">{item.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -64,15 +64,15 @@ const CircleSingingPage = () => {
           </p>
           <Link
             to="/contacto"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body font-semibold hover:opacity-90 transition-opacity"
-          >
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body font-semibold hover:opacity-90 transition-opacity">
+            
             Contacto
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default CircleSingingPage;
