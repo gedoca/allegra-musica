@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Mic2, Heart, Users, Waves } from "lucide-react";
+import circleSingingBg from "@/assets/circle-singing-bg.png";
 
 const CircleSingingPage = () => {
   return (
     <div>
-      <section className="relative py-32 px-6 bg-muted/30 overflow-hidden">
-        <div className="allegra-container">
+      <section className="relative py-32 px-6 overflow-hidden">
+        <img src={circleSingingBg} alt="Circle Singing" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="relative allegra-container">
           <span className="text-xs font-body font-semibold tracking-[0.3em] uppercase text-primary">Práctica Colectiva</span>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-2 mb-4">Circle Singing</h1>
           <p className="text-lg text-muted-foreground font-body max-w-2xl">
